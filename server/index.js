@@ -5,7 +5,10 @@ import bodyParser from 'body-parser';
 const port = process.env.PORT || 5000
 const DB = "mongodb://127.0.0.1:27017/students"
 const app = express()
+import studentRoutes from './route/students.js'
 
+// get route
+app.use('/students', studentRoutes)
 
 // only support string and limit 20 mb
 app.use(express.json({limit: "20mb", extended: true}));

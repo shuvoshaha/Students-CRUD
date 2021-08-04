@@ -1,10 +1,9 @@
 import express from 'express'
+import { postStudents } from '../controller/students.js'
 
 const router = express.Router()
 
-router.get('/', async(req, res) =>{
-    res.send(200).json("router is working")
-})
+router.get('/', postStudents)
 
 export default router
 
