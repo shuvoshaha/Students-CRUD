@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import bodyParser from 'body-parser';
 const port = process.env.PORT || 5000
-const DB = "mongodb+srv://sks007:sks007..@cluster0.abbdz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const DB = "mongodb://127.0.0.1:27017/students"
 const app = express()
 
 
