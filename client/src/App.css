@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  max-width: 90%;
+  padding: 0 1rem;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header{
+  width: 100%;
+  padding: 10px 0;
+  box-shadow: 0 3px 2px rgb(0 0 0 / 10%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo{
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper{
+ margin: 2rem 0 ;
+ display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/*========= All Students ======== */
+.all-students{
+ flex-basis: 68%;
+}
+
+.all-students table{}
+
+.all-students table tr{
+  
+}
+
+.all-students table tr:nth-child(odd){
+  background: #d4d3d1;
+}
+
+.all-students table tr th{
+  padding: 10px;
+  font-size: 14px;
+}
+
+.all-students table tr td{
+  padding: 10px;
+  font-size: 14px;
+}
+
+td.action a {
+  color: #000;
+  padding: 3px;
+}
+
+/*======= create Student ========*/
+
+.make-student{
+  flex-basis: 30%;
+  padding: 14px;
+  box-shadow: 0 9px 9px rgb(0 0 0 / 10%);
+  border-radius: 7px;
+}
+
+.make-student h2{
+  font-size: 16px;
+  color: #000;
+  padding: 10px 0;
+}
+
+
+.text-field{
+  border-radius: 1px;
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 8px 11px;
+  font-size: 13px;
+  border: 1px solid #e2e2e2;
+  color: #000;
+  transition: 1s ease-out;
+}
+
+.text-field:focus{
+  outline:none;
+  border: 1px solid #28c334;
+}
+
+.submit-btn{
+  outline: none;
+  border: none;
+  background: #28c334;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.5s ease-out;
+}
+
+.submit-btn:hover{
+  background: #13791b;
 }

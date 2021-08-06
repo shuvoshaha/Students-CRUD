@@ -7,9 +7,6 @@ const DB = "mongodb://127.0.0.1:27017/students"
 const app = express()
 import studentRoutes from './route/students.js'
 
-// get route
-app.use('/students', studentRoutes)
-
 // only support string and limit 20 mb
 app.use(express.json({limit: "20mb", extended: true}));
 
@@ -19,17 +16,19 @@ app.use(express.urlencoded({limit: "20mb", extended: true}));
 // make request form one website to another website
 app.use(cors())
 
+// get route
+app.use('/students', studentRoutes)
 
+// connection
 mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false
 })
 .then((res) =>{
     console.log("MongoDB is connect successfully")
 })
 .catch(err => console.log(err))
-
-mongoose.set("useFindAndModify", false)
 
 app.listen(port, () =>{
     console.log(`node is running on port ${port} `)

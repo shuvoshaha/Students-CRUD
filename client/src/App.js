@@ -1,22 +1,29 @@
 import './App.css';
+import { Link, BrowserRouter as Router } from 'react-router-dom'
+import AllStudents from './components/AllStudents';
+import CreateStudents from './components/CreateStudents';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <div className="header">
+          <div className="container">
+            <Link className="logo" to="/">Student Management System</Link>
+          </div>
+        </div>
+        <div className="main">
+          <div className="container">
+            <div className="wrapper">
+              <AllStudents />
+              <CreateStudents />
+            </div>
+          </div>
+        </div>
+
+      </Router>
+    </>
+
   );
 }
 

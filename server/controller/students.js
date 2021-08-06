@@ -1,5 +1,6 @@
+import student from "../model/students.js";
 
-export const postStudents = async (req, res) => {
+export const createStudent = async (req, res) => {
 
     const getStudentInfo = req.body;
     const newStudent = new student(getStudentInfo);
