@@ -14,7 +14,6 @@ const AllStudents = () => {
 
     useEffect(() =>{
         fetchData()
-        console.log(student)
     }, [student])
 
     
@@ -33,33 +32,21 @@ const AllStudents = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>123</td>
-                    <td>Shuvo</td>
-                    <td>2nd</td>
-                    <td>Compiler Design, Discrete Math</td>
-                    <td>CSE</td>
-                    <td className="action"><Link to="/">Edit</Link>
-                    <Link to="/">Delete</Link></td>
-                </tr>
-                <tr>
-                    <td>123</td>
-                    <td>Shuvo</td>
-                    <td>2nd</td>
-                    <td>Compiler Design, Discrete Math</td>
-                    <td>CSE</td>
-                    <td className="action"><Link to="/">Edit</Link>
-                    <Link to="/">Delete</Link></td>
-                </tr>
-                <tr>
-                    <td>123</td>
-                    <td>Shuvo</td>
-                    <td>2nd</td>
-                    <td>Compiler Design, Discrete Math</td>
-                    <td>CSE</td>
-                    <td className="action"><Link to="/">Edit</Link>
-                    <Link to="/">Delete</Link></td>
-                </tr>
+                {
+                    student.map((data, key) =>{
+                        return(
+                            <tr key={key}>
+                                <td> {data.reg} </td>
+                                <td> {data.name} </td>
+                                <td> {data.grade} </td>
+                                <td> {data.subject} </td>
+                                <td> {data.section} </td>
+                                <td className="action"><Link to= {`/edit/${data._id}`} >Edit</Link>
+                                    <Link to= {`/delete/${data._id}`} >Delete</Link></td>
+                            </tr>
+                        )
+                    })
+                }
                 </tbody>
               
             </table>
