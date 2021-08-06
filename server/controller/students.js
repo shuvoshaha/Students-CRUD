@@ -15,7 +15,7 @@ export const createStudent = async (req, res) => {
 
 export const getStudentsData = async (req, res) => {
     try {
-        const allStudents = student.find();
+        const allStudents = await student.find();
         res.status(200).json(allStudents);
     }
     catch (err) { res.status(404).json({ message: err.message }) }
