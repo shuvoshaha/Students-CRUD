@@ -9,9 +9,9 @@ const CreateStudents = () => {
         subject: '',
         section: ''
     })
-    const onSubmitHandler = (e) => {
+    const onSubmitHandler = async (e) => {
         e.preventDefault() ;
-        axios.post(`http://localhost:5000/students`, stdData)
+        await axios.post(`http://localhost:5000/students`, stdData)
         .then(res => console.log("Data is submited"))
         .catch(err => console.log(err))
     }

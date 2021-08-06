@@ -71,6 +71,7 @@ td.action a {
   padding: 14px;
   box-shadow: 0 9px 9px rgb(0 0 0 / 10%);
   border-radius: 7px;
+  height: 100%;
 }
 
 .make-student h2{
