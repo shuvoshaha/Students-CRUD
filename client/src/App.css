@@ -92,6 +92,15 @@ td.action a {
   transition: 1s ease-out;
 }
 
+input[type=number]{
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button, 
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+
 .text-field:focus{
   outline:none;
   border: 1px solid #28c334;

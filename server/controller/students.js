@@ -6,7 +6,8 @@ export const createStudent = async (req, res) => {
     const newStudent = new student(getStudentInfo);
 
     try {
-        await newStudent.save();
+        const result = await newStudent.save();
+        res.status.status(201).json(result)
     }
     catch (err) { res.status(404).json({ message: err.message }) }
 }

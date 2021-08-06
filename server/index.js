@@ -8,10 +8,10 @@ const app = express()
 import studentRoutes from './route/students.js'
 
 // only support string and limit 20 mb
-app.use(express.json({limit: "20mb", extended: true}));
+app.use(bodyParser.json({limit: "20mb", extended: true}));
 
 // it parses incomming request with urlencoded payloads
-app.use(express.urlencoded({limit: "20mb", extended: true}));
+app.use(bodyParser.urlencoded({limit: "20mb", extended: true}));
 
 // make request form one website to another website
 app.use(cors())
