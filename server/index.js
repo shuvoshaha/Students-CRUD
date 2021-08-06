@@ -19,17 +19,20 @@ app.use(cors())
 // get route
 app.use('/students', studentRoutes)
 
+
 // connection
 mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+
 })
 .then((res) =>{
     console.log("MongoDB is connect successfully")
 })
 .catch(err => console.log(err))
+app.set("useFindAndModify", false)
 
 app.listen(port, () =>{
     console.log(`node is running on port ${port} `)
 })
+

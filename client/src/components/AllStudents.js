@@ -1,7 +1,24 @@
-import React from 'react'
+import React,  { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 const AllStudents = () => {
+
+    const [student, setStudents] = useState([])
+ 
+    const fetchData = async () =>{
+        await axios.get("http://localhost:5000/students")
+        .then(res => setStudents(res.data))
+        .catch(err => console.log(err))
+    }
+
+    useEffect(() =>{
+        fetchData()
+        console.log(student)
+    }, [student])
+
+    
+     
     return (
         <div className="all-students">
             <table border="0">
